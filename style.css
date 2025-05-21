@@ -1,99 +1,100 @@
+/*Palīgmateriāls w3schools*/
 body {
-      margin: 0;
-      padding: 0;
-      background: #b4b4b4;
-      font-family: 'Poppins', sans-serif;
-    }
+  margin: 0;
+  padding: 0;
+  background: #b4b4b4;
+  font-family: 'Poppins', sans-serif;
+}
 
-    header {
-      padding: 30px 20px;
-      text-align: center;
-      color: white;
-      background-image: url("https://i.postimg.cc/qMdmBTV4/Ekr-nuz-mums-2025-04-30-202722.png");
-      background-repeat: repeat;
-      background-position: center;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    }
+header {
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  background-image: url("https://i.postimg.cc/qMdmBTV4/Ekr-nuz-mums-2025-04-30-202722.png");
+  background-repeat: repeat;
+  background-position: center;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
 
-    h1 {
-      font-size: 42px;
-      margin: 0;
-      text-shadow: 2px 2px 4px #000000;
-    }
+h1 {
+  font-size: 42px;
+  margin: 0;
+  text-shadow: 2px 2px 4px #000000;
+}
 
-    main {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 20px;
-    }
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
-    .book-container {
-      position: relative;
-      width: 800px;
-      height: auto; /* <-- Noņem fiksēto augstumu */
-      perspective: 1500px;
-      cursor: pointer;
-      transition: transform 0.3s;
-    }
+.book-container {
+  position: relative;
+  width: 800px;
+  aspect-ratio: 800 / 549;
+  perspective: 1500px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
 
-    .book-container:hover {
-      transform: scale(1.02);
-    }
+.book-container:hover {
+  transform: scale(1.02);
+}
 
-    .book {
-      width: 100%;
-      height: auto;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 1s ease;
-    }
+.book {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d; /* 3D skata efekts */
+  transition: transform 1s ease;
+}
 
-    .book.opened {
-      transform: rotateY(180deg);
-    }
+.book.opened {
+  transform: rotateY(180deg); /* apgriež grāmatu */
+}
 
-    .book-side {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      background-color: #b4b4b4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+.book-side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden; /*Priekšpuse un aizmugure tiek pozicionētas viena otrai priekšā.*/
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  background-color: #b4b4b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-    .front {
-      z-index: 2;
-    }
+.front {
+  z-index: 2; /*Nosaka vai elements ir priekšā vai aizmugurē*/
+}
 
-    .back {
-      transform: rotateY(180deg);
-    }
+.back {
+  transform: rotateY(180deg);
+}
 
-    .book-side img {
-      max-width: 100%;
-      height: auto;
-      object-fit: contain;
-      display: block;
-    }
+.book-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
 
-    @media (max-width: 900px) {
-      .book-container {
-        width: 90vw;
-      }
+@media (max-width: 900px) {
+  .book-container {
+    width: 90vw;
+  }
 
-      h1 {
-        font-size: 32px;
-      }
-    }
+  h1 {
+    font-size: 32px;
+  }
+}
 
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 26px;
-      }
-    }
+@media (max-width: 600px) {
+  h1 {
+    font-size: 26px;
+  }
+}
